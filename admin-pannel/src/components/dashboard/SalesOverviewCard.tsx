@@ -8,7 +8,7 @@ import {
   CartesianGrid,
   Tooltip,
 } from 'recharts';
-import { TrendingUp } from 'lucide-react';
+import { HopkidIcon } from '../common/HopkidIcon';
 import type { DateRangeKey, SalesPoint } from '../../types/dashboard';
 
 interface SalesOverviewCardProps {
@@ -47,7 +47,7 @@ export const SalesOverviewCard: React.FC<SalesOverviewCardProps> = ({
               {total}
             </span>
             <span className="inline-flex items-center gap-1 rounded-full bg-[#E7F8EA] px-2.5 py-0.5 text-xs font-bold text-[#16A34A]">
-              <TrendingUp className="h-3.5 w-3.5" />
+              <HopkidIcon name="trendingUp" className="h-3.5 w-3.5" />
               {growth}
             </span>
             <span className="text-xs font-medium text-[#6B7280]">{comparisonText}</span>

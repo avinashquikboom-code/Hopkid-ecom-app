@@ -1,56 +1,55 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  PlusCircle,
-  ShoppingBag,
-  Boxes,
-  TicketPercent,
-  UploadCloud,
-  BarChart3,
-} from 'lucide-react';
+import { HopkidIcon, type HopkidIconName } from '../common/HopkidIcon';
 
-const QUICK_ACTIONS = [
+const QUICK_ACTIONS: {
+  label: string;
+  to: string;
+  bg: string;
+  iconBg: string;
+  iconName: HopkidIconName;
+}[] = [
   {
     label: 'Add Product',
     to: '/products/new',
     bg: 'bg-[#F4EAFE]',
     iconBg: 'bg-[#6A0DAD]',
-    Icon: PlusCircle,
+    iconName: 'plusCircle',
   },
   {
     label: 'Manage Orders',
     to: '/orders',
     bg: 'bg-[#E8F2FF]',
     iconBg: 'bg-[#2563EB]',
-    Icon: ShoppingBag,
+    iconName: 'bag',
   },
   {
     label: 'Update Inventory',
     to: '/inventory',
     bg: 'bg-[#FFF3DF]',
     iconBg: 'bg-[#D97706]',
-    Icon: Boxes,
+    iconName: 'inventory',
   },
   {
     label: 'Create Coupon',
     to: '/discounts',
     bg: 'bg-[#FCE7F3]',
     iconBg: 'bg-[#DB2777]',
-    Icon: TicketPercent,
+    iconName: 'discounts',
   },
   {
     label: 'Upload Banner',
     to: '/banners',
     bg: 'bg-[#E7F8EA]',
     iconBg: 'bg-[#16A34A]',
-    Icon: UploadCloud,
+    iconName: 'upload',
   },
   {
     label: 'View Reports',
     to: '/reports/sales',
     bg: 'bg-[#F0E5FC]',
     iconBg: 'bg-[#8B35D1]',
-    Icon: BarChart3,
+    iconName: 'reports',
   },
 ];
 
@@ -67,7 +66,7 @@ export const QuickActionsCard: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-6">
-        {QUICK_ACTIONS.map(({ label, to, bg, iconBg, Icon }) => (
+        {QUICK_ACTIONS.map(({ label, to, bg, iconBg, iconName }) => (
           <button
             key={label}
             type="button"
@@ -77,7 +76,7 @@ export const QuickActionsCard: React.FC = () => {
             <div
               className={`flex h-11 w-11 items-center justify-center rounded-xl text-white shadow-sm transition-transform duration-200 group-hover:scale-110 ${iconBg}`}
             >
-              <Icon className="h-5 w-5" />
+              <HopkidIcon name={iconName} className="h-5 w-5" />
             </div>
             <span className="text-xs font-bold text-[#171322] leading-tight">
               {label}

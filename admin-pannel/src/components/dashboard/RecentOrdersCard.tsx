@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import { HopkidIcon } from '../common/HopkidIcon';
 import type { OrderBadgeStatus, RecentOrder } from '../../types/dashboard';
 
 interface RecentOrdersCardProps {
@@ -32,7 +32,7 @@ export const RecentOrdersCard: React.FC<RecentOrdersCardProps> = ({
           className="inline-flex items-center gap-1 text-xs font-bold text-[#6A0DAD] hover:text-[#4B087E]"
         >
           View All
-          <ArrowUpRight className="h-3.5 w-3.5" />
+          <HopkidIcon name="arrowUpRight" className="h-3.5 w-3.5" />
         </button>
       </div>
 

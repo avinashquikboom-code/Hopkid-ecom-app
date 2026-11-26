@@ -1,6 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 import '../../domain/entities/product.dart';
 import '../constants/app_colors.dart';
+import '../constants/app_icons.dart';
 import 'badges_and_price.dart';
 
 class ProductCard extends StatelessWidget {
@@ -77,8 +78,8 @@ class ProductCard extends StatelessWidget {
                           padding: const EdgeInsets.all(6),
                           child: Icon(
                             isWishlisted
-                                ? Icons.favorite_rounded
-                                : Icons.favorite_border_rounded,
+                                ? AppIcons.heartFill
+                                : AppIcons.heartLine,
                             size: 18,
                             color: isWishlisted
                                 ? AppColors.error

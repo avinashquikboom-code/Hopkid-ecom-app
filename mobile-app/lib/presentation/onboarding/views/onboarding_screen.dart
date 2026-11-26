@@ -2,6 +2,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/services/providers.dart';
 import '../../../core/widgets/buttons.dart';
 import '../../../core/widgets/responsive_container.dart';
@@ -133,7 +134,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                                   top: 12,
                                   right: 16,
                                   child: Icon(
-                                    Icons.auto_awesome_rounded,
+                                    AppIcons.sparkleFill,
                                     color: AppColors.warning,
                                     size: 28,
                                   ),
@@ -142,7 +143,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                                   bottom: 14,
                                   left: 18,
                                   child: Icon(
-                                    Icons.star_rounded,
+                                    AppIcons.starFill,
                                     color: AppColors.primaryPurple,
                                     size: 24,
                                   ),

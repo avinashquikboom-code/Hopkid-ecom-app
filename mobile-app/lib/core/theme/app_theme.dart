@@ -1,16 +1,15 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../constants/app_colors.dart';
+import 'app_typography.dart';
 
 class AppTheme {
   AppTheme._();
 
   static ThemeData get lightTheme {
-    final baseTextTheme = GoogleFonts.plusJakartaSansTextTheme();
-
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
+      fontFamily: AppTypography.fontFamily,
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.primaryPurple,
         primary: AppColors.primaryPurple,
@@ -19,21 +18,14 @@ class AppTheme {
         error: AppColors.error,
       ),
       scaffoldBackgroundColor: AppColors.lightBackground,
-      textTheme: baseTextTheme.apply(
-        bodyColor: AppColors.primaryText,
-        displayColor: AppColors.primaryText,
-      ),
-      appBarTheme: AppBarTheme(
+      textTheme: AppTypography.textTheme,
+      appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.surface,
         foregroundColor: AppColors.primaryText,
         elevation: 0,
         scrolledUnderElevation: 0.5,
         centerTitle: false,
-        titleTextStyle: GoogleFonts.plusJakartaSans(
-          fontSize: 18,
-          fontWeight: FontWeight.w700,
-          color: AppColors.primaryText,
-        ),
+        titleTextStyle: AppTypography.title,
       ),
       cardTheme: CardThemeData(
         color: AppColors.surface,
@@ -47,7 +39,7 @@ class AppTheme {
         filled: true,
         fillColor: AppColors.surface,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-        hintStyle: const TextStyle(color: AppColors.secondaryText, fontSize: 14),
+        hintStyle: AppTypography.caption.copyWith(fontSize: 14),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
           borderSide: const BorderSide(color: AppColors.border),
@@ -74,10 +66,7 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(14),
           ),
-          textStyle: GoogleFonts.plusJakartaSans(
-            fontSize: 15,
-            fontWeight: FontWeight.w700,
-          ),
+          textStyle: AppTypography.button,
         ),
       ),
       dividerColor: AppColors.border,

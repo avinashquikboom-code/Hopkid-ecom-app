@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_constants.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/responsive/responsive.dart';
 import '../../../core/widgets/product_card.dart';
 import '../../../core/widgets/responsive_container.dart';
@@ -61,7 +62,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: const Icon(
-                          Icons.workspace_premium_rounded,
+                          AppIcons.crownFill,
                           color: AppColors.primaryPurple,
                           size: 22,
                         ),
@@ -78,14 +79,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       const Spacer(),
                       IconButton(
                         onPressed: () => context.push('/offers'),
-                        icon: const Icon(Icons.notifications_none_rounded),
+                        icon: const Icon(AppIcons.notification),
                         color: AppColors.primaryText,
                       ),
                       Stack(
                         children: [
                           IconButton(
                             onPressed: () => context.go('/cart'),
-                            icon: const Icon(Icons.shopping_bag_outlined),
+                            icon: const Icon(AppIcons.cartLine),
                             color: AppColors.primaryText,
                           ),
                           if (cartCount > 0)
@@ -296,9 +297,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                       child: Column(
                                         children: [
                                           Icon(
-                                            _shortcutIcon(cat.id),
+                                            AppIcons.forCategory(cat.id),
                                             color: AppColors.primaryPurple,
-                                            size: 26,
+                                            size: 24,
                                           ),
                                           const SizedBox(height: 6),
                                           Text(
@@ -330,19 +331,19 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                             child: Row(
                               children: const [
                                 _ServicePill(
-                                  icon: Icons.local_shipping_outlined,
+                                  icon: AppIcons.shipping,
                                   label: 'Free\nShipping',
                                 ),
                                 _ServicePill(
-                                  icon: Icons.autorenew_rounded,
+                                  icon: AppIcons.returns,
                                   label: 'Easy\nReturns',
                                 ),
                                 _ServicePill(
-                                  icon: Icons.verified_user_outlined,
+                                  icon: AppIcons.shield,
                                   label: 'Secure\nPayment',
                                 ),
                                 _ServicePill(
-                                  icon: Icons.workspace_premium_outlined,
+                                  icon: AppIcons.award,
                                   label: 'Genuine\nProducts',
                                 ),
                               ],
@@ -379,7 +380,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
                           if (homeData.trendingProducts.isEmpty)
                             const EmptyStateWidget(
-                              icon: Icons.search_off_rounded,
+                              icon: AppIcons.search,
                               title: 'No matching products',
                               subtitle: 'Try searching for Dino, Hoodie, or Dress.',
                             )
@@ -422,19 +423,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ),
       ),
     );
-  }
-
-  IconData _shortcutIcon(String id) {
-    switch (id) {
-      case 'boys':
-        return Icons.boy_rounded;
-      case 'girls':
-        return Icons.girl_rounded;
-      case 'baby':
-        return Icons.child_friendly_rounded;
-      default:
-        return Icons.toys_rounded;
-    }
   }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowUpRight, Trophy } from 'lucide-react';
+import { HopkidIcon } from '../common/HopkidIcon';
 import type { TopProduct } from '../../types/dashboard';
 
 interface TopProductsCardProps {
@@ -27,7 +27,7 @@ export const TopProductsCard: React.FC<TopProductsCardProps> = ({
           <h2 className="text-[17px] font-bold text-[#171322]">
             Top Selling Products
           </h2>
-          <Trophy className="h-4 w-4 text-[#F59E0B]" />
+          <HopkidIcon name="trophy" className="h-4 w-4 text-[#F59E0B]" />
         </div>
         <button
           type="button"
@@ -35,7 +35,7 @@ export const TopProductsCard: React.FC<TopProductsCardProps> = ({
           className="inline-flex items-center gap-1 text-xs font-bold text-[#6A0DAD] hover:text-[#4B087E]"
         >
           View All
-          <ArrowUpRight className="h-3.5 w-3.5" />
+          <HopkidIcon name="arrowUpRight" className="h-3.5 w-3.5" />
         </button>
       </div>
 
@@ -63,9 +63,9 @@ export const TopProductsCard: React.FC<TopProductsCardProps> = ({
                 </span>
 
                 <div
-                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl shadow-2xs ${product.bgTint}`}
+                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-[#6A0DAD] shadow-2xs ${product.bgTint}`}
                 >
-                  {product.emoji}
+                  <HopkidIcon name={product.iconName} className="h-5 w-5" />
                 </div>
 
                 <div className="min-w-0">

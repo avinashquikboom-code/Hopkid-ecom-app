@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_constants.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/responsive/responsive.dart';
 import '../../../core/widgets/buttons.dart';
 import '../../../core/widgets/hopkid_app_bar.dart';
@@ -89,7 +90,7 @@ class CheckoutScreen extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Icon(
-                Icons.location_on_rounded,
+                AppIcons.location,
                 color: AppColors.primaryPurple,
               ),
               const SizedBox(width: 10),
@@ -152,28 +153,28 @@ class CheckoutScreen extends ConsumerWidget {
             children: [
               _PaymentTile(
                 title: 'UPI (GPay, PhonePe, Paytm)',
-                icon: Icons.account_balance_wallet_outlined,
+                icon: AppIcons.wallet,
                 value: PaymentMethod.upi,
                 groupValue: checkout.paymentMethod,
                 onChanged: vm.selectPayment,
               ),
               _PaymentTile(
                 title: 'Credit / Debit Card',
-                icon: Icons.credit_card_rounded,
+                icon: AppIcons.card,
                 value: PaymentMethod.card,
                 groupValue: checkout.paymentMethod,
                 onChanged: vm.selectPayment,
               ),
               _PaymentTile(
                 title: 'Net Banking',
-                icon: Icons.account_balance_outlined,
+                icon: AppIcons.bank,
                 value: PaymentMethod.netBanking,
                 groupValue: checkout.paymentMethod,
                 onChanged: vm.selectPayment,
               ),
               _PaymentTile(
                 title: 'Cash on Delivery',
-                icon: Icons.payments_outlined,
+                icon: AppIcons.rupee,
                 value: PaymentMethod.cod,
                 groupValue: checkout.paymentMethod,
                 onChanged: vm.selectPayment,
@@ -342,9 +343,7 @@ class _DeliveryTile extends StatelessWidget {
         child: Row(
           children: [
             Icon(
-              selected
-                  ? Icons.radio_button_checked_rounded
-                  : Icons.radio_button_off_rounded,
+              selected ? AppIcons.radioChecked : AppIcons.radioUnchecked,
               color: selected ? AppColors.primaryPurple : AppColors.secondaryText,
               size: 20,
             ),
@@ -395,9 +394,7 @@ class _PaymentTile extends StatelessWidget {
         child: Row(
           children: [
             Icon(
-              selected
-                  ? Icons.radio_button_checked_rounded
-                  : Icons.radio_button_off_rounded,
+              selected ? AppIcons.radioChecked : AppIcons.radioUnchecked,
               color: selected ? AppColors.primaryPurple : AppColors.secondaryText,
               size: 20,
             ),

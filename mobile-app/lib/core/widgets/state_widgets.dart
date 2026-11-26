@@ -1,5 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 import '../constants/app_colors.dart';
+import '../constants/app_icons.dart';
 import 'buttons.dart';
 
 class LoadingWidget extends StatelessWidget {
@@ -112,7 +113,7 @@ class HopkidErrorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return EmptyStateWidget(
-      icon: Icons.error_outline_rounded,
+      icon: AppIcons.error,
       title: 'Oops! Something went wrong',
       subtitle: message,
       actionLabel: 'Try Again',

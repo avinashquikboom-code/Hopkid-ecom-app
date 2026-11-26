@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Nunito', sans-serif;
   --color-purple-primary: #6A0DAD;
   --color-purple-deep: #4B087E;
   --color-purple-accent: #8B35D1;
@@ -19,7 +19,7 @@
 
 @layer base {
   html, body {
-    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Nunito', sans-serif;
     background-color: #F8F8FC;
     color: #171322;
     margin: 0;

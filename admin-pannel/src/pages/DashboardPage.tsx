@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { AlertCircle, RefreshCw } from 'lucide-react';
+import { HopkidIcon } from '../components/common/HopkidIcon';
 import type { LayoutOutletContext } from '../components/layout/AdminLayout';
 import { WelcomeBanner } from '../components/dashboard/WelcomeBanner';
 import { KpiCards } from '../components/dashboard/KpiCards';
@@ -80,7 +80,7 @@ export const DashboardPage: React.FC = () => {
       {error && (
         <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">
           <div className="flex items-center gap-2">
-            <AlertCircle className="h-4 w-4 shrink-0" />
+            <HopkidIcon name="alert" className="h-4 w-4 shrink-0" />
             <span>{error}</span>
           </div>
           <button
@@ -88,7 +88,7 @@ export const DashboardPage: React.FC = () => {
             onClick={() => void loadData(dateRange)}
             className="inline-flex items-center gap-1.5 rounded-xl bg-white px-3 py-1.5 text-xs font-bold text-rose-700 shadow-2xs ring-1 ring-rose-200 hover:bg-rose-100"
           >
-            <RefreshCw className="h-3.5 w-3.5" />
+            <HopkidIcon name="refresh" className="h-3.5 w-3.5" />
             Retry
           </button>
         </div>

@@ -2,6 +2,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/widgets/badges_and_price.dart';
 import '../../../core/widgets/hopkid_app_bar.dart';
 import '../../../core/widgets/responsive_container.dart';
@@ -23,7 +24,7 @@ class WishlistScreen extends ConsumerWidget {
       body: SafeArea(
         child: wishlist.isEmpty
             ? EmptyStateWidget(
-                icon: Icons.favorite_border_rounded,
+                icon: AppIcons.heartLine,
                 title: 'Your wishlist is empty',
                 subtitle: 'Save your favorite kids outfits to revisit anytime.',
                 actionLabel: 'Browse Products',
@@ -74,7 +75,7 @@ class WishlistScreen extends ConsumerWidget {
                                         child: const Padding(
                                           padding: EdgeInsets.all(6),
                                           child: Icon(
-                                            Icons.favorite_rounded,
+                                            AppIcons.heartFill,
                                             size: 18,
                                             color: AppColors.error,
                                           ),

@@ -2,6 +2,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/responsive/responsive.dart';
 import '../../../core/widgets/category_card.dart';
 import '../../../core/widgets/hopkid_app_bar.dart';
@@ -28,7 +29,7 @@ class CategoriesScreen extends ConsumerWidget {
             children: [
               IconButton(
                 onPressed: () => context.go('/cart'),
-                icon: const Icon(Icons.shopping_bag_outlined),
+                icon: const Icon(AppIcons.cartLine),
               ),
               if (cartCount > 0)
                 Positioned(

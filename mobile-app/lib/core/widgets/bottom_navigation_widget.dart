@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../presentation/cart/viewmodels/cart_viewmodel.dart';
 import '../constants/app_colors.dart';
+import '../constants/app_icons.dart';
 
 class BottomNavigationWidget extends ConsumerWidget {
   final StatefulNavigationShell navigationShell;
@@ -39,14 +40,14 @@ class BottomNavigationWidget extends ConsumerWidget {
             labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
             destinations: [
               const NavigationDestination(
-                icon: Icon(Icons.home_outlined, color: AppColors.secondaryText),
-                selectedIcon: Icon(Icons.home_rounded, color: AppColors.primaryPurple),
+                icon: Icon(AppIcons.homeLine, color: AppColors.secondaryText),
+                selectedIcon: Icon(AppIcons.homeFill, color: AppColors.primaryPurple),
                 label: 'Home',
               ),
               const NavigationDestination(
-                icon: Icon(Icons.grid_view_outlined, color: AppColors.secondaryText),
+                icon: Icon(AppIcons.categoryLine, color: AppColors.secondaryText),
                 selectedIcon:
-                    Icon(Icons.grid_view_rounded, color: AppColors.primaryPurple),
+                    Icon(AppIcons.categoryFill, color: AppColors.primaryPurple),
                 label: 'Category',
               ),
               NavigationDestination(
@@ -55,7 +56,7 @@ class BottomNavigationWidget extends ConsumerWidget {
                   label: Text('$cartCount'),
                   backgroundColor: AppColors.primaryPurple,
                   child: const Icon(
-                    Icons.shopping_bag_outlined,
+                    AppIcons.cartLine,
                     color: AppColors.secondaryText,
                   ),
                 ),
@@ -64,22 +65,22 @@ class BottomNavigationWidget extends ConsumerWidget {
                   label: Text('$cartCount'),
                   backgroundColor: AppColors.primaryPurple,
                   child: const Icon(
-                    Icons.shopping_bag_rounded,
+                    AppIcons.cartFill,
                     color: AppColors.primaryPurple,
                   ),
                 ),
                 label: 'Cart',
               ),
               const NavigationDestination(
-                icon: Icon(Icons.receipt_long_outlined, color: AppColors.secondaryText),
+                icon: Icon(AppIcons.ordersLine, color: AppColors.secondaryText),
                 selectedIcon:
-                    Icon(Icons.receipt_long_rounded, color: AppColors.primaryPurple),
+                    Icon(AppIcons.ordersFill, color: AppColors.primaryPurple),
                 label: 'Orders',
               ),
               const NavigationDestination(
-                icon: Icon(Icons.person_outline_rounded, color: AppColors.secondaryText),
+                icon: Icon(AppIcons.profileLine, color: AppColors.secondaryText),
                 selectedIcon:
-                    Icon(Icons.person_rounded, color: AppColors.primaryPurple),
+                    Icon(AppIcons.profileFill, color: AppColors.primaryPurple),
                 label: 'Profile',
               ),
             ],

@@ -2,6 +2,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/widgets/hopkid_app_bar.dart';
 import '../../../core/widgets/product_card.dart';
 import '../../../core/widgets/responsive_container.dart';
@@ -124,11 +125,11 @@ class _ProductListingScreenState extends ConsumerState<ProductListingScreen> {
         title: _titleForCategory,
         actions: [
           IconButton(
-            icon: Icon(_showSearch ? Icons.close_rounded : Icons.search_rounded),
+            icon: Icon(_showSearch ? AppIcons.close : AppIcons.search),
             onPressed: () => setState(() => _showSearch = !_showSearch),
           ),
           IconButton(
-            icon: const Icon(Icons.tune_rounded),
+            icon: const Icon(AppIcons.filter),
             onPressed: _showSortSheet,
           ),
         ],
@@ -196,7 +197,7 @@ class _ProductListingScreenState extends ConsumerState<ProductListingScreen> {
 
                     if (state.products.isEmpty)
                       EmptyStateWidget(
-                        icon: Icons.checkroom_outlined,
+                        icon: AppIcons.tshirt,
                         title: 'No products found',
                         subtitle:
                             'Try another filter or explore all kids fashion.',

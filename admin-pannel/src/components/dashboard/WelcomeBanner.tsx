@@ -1,5 +1,5 @@
 import React from 'react';
-import { Crown, Sparkles } from 'lucide-react';
+import { HopkidIcon } from '../common/HopkidIcon';
 
 export const WelcomeBanner: React.FC = () => {
   return (
@@ -20,11 +20,11 @@ export const WelcomeBanner: React.FC = () => {
         {/* Left: Greeting */}
         <div className="text-center md:text-left">
           <div className="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1 text-[11px] font-semibold text-[#6A0DAD] shadow-2xs ring-1 ring-[#E8E5EF]">
-            <Sparkles className="h-3.5 w-3.5 text-[#8B35D1]" />
+            <HopkidIcon name="sparkles" className="h-3.5 w-3.5 text-[#8B35D1]" />
             Hopkid Storefront Live
           </div>
           <h1 className="mt-2.5 text-2xl font-extrabold tracking-tight text-[#171322] sm:text-[26px]">
-            Hello Admin! 👋
+            Hello Admin!
           </h1>
           <p className="mt-1 text-sm font-medium text-[#6B7280]">
             Here&apos;s what&apos;s happening at Hopkid today.
@@ -46,7 +46,7 @@ export const WelcomeBanner: React.FC = () => {
         {/* Right: Crown & Celebration callout */}
         <div className="flex flex-col items-center text-center md:items-end md:text-right">
           <div className="mb-1.5 flex h-10 w-10 items-center justify-center rounded-xl bg-white/85 shadow-sm ring-1 ring-[#E8E5EF]">
-            <Crown className="h-5 w-5 text-[#6A0DAD] fill-[#FDE047]" />
+            <HopkidIcon name="crown" active className="h-5 w-5 text-[#6A0DAD]" />
           </div>
           <p className="text-xs font-semibold tracking-wide text-[#6B7280]">
             Every Moment is a

@@ -2,6 +2,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/responsive/responsive.dart';
 import '../../../core/widgets/badges_and_price.dart';
 import '../../../core/widgets/buttons.dart';
@@ -178,7 +179,7 @@ class _ProductDetailsScreenState extends ConsumerState<ProductDetailsScreen> {
             Expanded(
               child: SecondaryButton(
                 label: 'Add to Cart',
-                icon: Icons.shopping_bag_outlined,
+                icon: AppIcons.cartLine,
                 onPressed: () {
                   ref.read(cartViewModelProvider.notifier).addToCart(
                         product,
@@ -223,9 +224,7 @@ class _ProductDetailsScreenState extends ConsumerState<ProductDetailsScreen> {
         actions: [
           IconButton(
             icon: Icon(
-              isWishlisted
-                  ? Icons.favorite_rounded
-                  : Icons.favorite_border_rounded,
+              isWishlisted ? AppIcons.heartFill : AppIcons.heartLine,
               color: isWishlisted ? AppColors.error : AppColors.primaryText,
             ),
             onPressed: () => ref
@@ -233,7 +232,7 @@ class _ProductDetailsScreenState extends ConsumerState<ProductDetailsScreen> {
                 .toggleWishlist(product),
           ),
           IconButton(
-            icon: const Icon(Icons.share_outlined),
+            icon: const Icon(AppIcons.share),
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text('Sharing ${product.name}')),

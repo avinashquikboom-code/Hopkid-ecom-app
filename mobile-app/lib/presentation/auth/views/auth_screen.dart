@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_constants.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/widgets/buttons.dart';
 import '../../../core/widgets/responsive_container.dart';
 import '../viewmodels/auth_viewmodel.dart';
@@ -78,7 +79,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                               shape: BoxShape.circle,
                             ),
                             child: const Icon(
-                              Icons.workspace_premium_rounded,
+                              AppIcons.crownFill,
                               size: 32,
                               color: AppColors.primaryPurple,
                             ),
@@ -159,7 +160,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                           controller: _nameController,
                           decoration: const InputDecoration(
                             labelText: 'Full Name',
-                            prefixIcon: Icon(Icons.person_outline_rounded),
+                            prefixIcon: Icon(AppIcons.profileLine),
                           ),
                           validator: (v) =>
                               (v == null || v.trim().isEmpty) ? 'Enter your name' : null,
@@ -172,7 +173,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                         keyboardType: TextInputType.emailAddress,
                         decoration: const InputDecoration(
                           labelText: 'Mobile Number / Email',
-                          prefixIcon: Icon(Icons.alternate_email_rounded),
+                          prefixIcon: Icon(AppIcons.email),
                         ),
                         validator: (v) => (v == null || v.trim().isEmpty)
                             ? 'Enter mobile number or email'
@@ -185,12 +186,12 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                         obscureText: _obscurePassword,
                         decoration: InputDecoration(
                           labelText: 'Password',
-                          prefixIcon: const Icon(Icons.lock_outline_rounded),
+                          prefixIcon: const Icon(AppIcons.lock),
                           suffixIcon: IconButton(
                             icon: Icon(
                               _obscurePassword
-                                  ? Icons.visibility_off_outlined
-                                  : Icons.visibility_outlined,
+                                  ? AppIcons.eyeOff
+                                  : AppIcons.eye,
                             ),
                             onPressed: () => setState(
                               () => _obscurePassword = !_obscurePassword,
@@ -255,7 +256,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                       const SizedBox(height: 18),
 
                       _SocialAuthButton(
-                        icon: Icons.g_mobiledata_rounded,
+                        icon: AppIcons.google,
                         label: 'Continue with Google',
                         onTap: () async {
                           final ok = await vm.continueWithGoogle();
@@ -264,7 +265,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                       ),
                       const SizedBox(height: 12),
                       _SocialAuthButton(
-                        icon: Icons.apple_rounded,
+                        icon: AppIcons.apple,
                         label: 'Continue with Apple',
                         onTap: () async {
                           final ok = await vm.continueWithApple();

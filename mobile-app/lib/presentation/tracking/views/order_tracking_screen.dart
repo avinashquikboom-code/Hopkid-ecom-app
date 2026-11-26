@@ -2,6 +2,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_constants.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/widgets/badges_and_price.dart';
 import '../../../core/widgets/hopkid_app_bar.dart';
 import '../../../core/widgets/responsive_container.dart';
@@ -137,10 +138,10 @@ class _OrderTrackingScreenState extends ConsumerState<OrderTrackingScreen> {
                                     : AppColors.border;
 
                             final IconData stepIcon = step.isCurrent
-                                ? Icons.local_shipping_rounded
+                                ? AppIcons.shippingFill
                                 : step.isCompleted
-                                    ? Icons.check_rounded
-                                    : Icons.circle_outlined;
+                                    ? AppIcons.check
+                                    : AppIcons.circleLine;
 
                             return IntrinsicHeight(
                               child: Row(

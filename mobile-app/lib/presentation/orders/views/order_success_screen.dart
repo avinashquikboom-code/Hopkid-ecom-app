@@ -1,6 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/widgets/buttons.dart';
 import '../../../core/widgets/responsive_container.dart';
 
@@ -36,7 +37,7 @@ class OrderSuccessScreen extends StatelessWidget {
                         shape: BoxShape.circle,
                       ),
                       child: const Icon(
-                        Icons.check_circle_rounded,
+                        AppIcons.checkCircleFill,
                         color: AppColors.success,
                         size: 48,
                       ),

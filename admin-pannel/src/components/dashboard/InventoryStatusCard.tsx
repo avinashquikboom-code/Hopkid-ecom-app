@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import { HopkidIcon } from '../common/HopkidIcon';
 import type { InventoryItem, StockStatus } from '../../types/dashboard';
 
 interface InventoryStatusCardProps {
@@ -30,7 +30,7 @@ export const InventoryStatusCard: React.FC<InventoryStatusCardProps> = ({
           className="inline-flex items-center gap-1 rounded-lg bg-[#F4EAFE] px-3 py-1.5 text-xs font-bold text-[#6A0DAD] transition-colors hover:bg-[#E9D5FF]"
         >
           View All
-          <ArrowUpRight className="h-3.5 w-3.5" />
+          <HopkidIcon name="arrowUpRight" className="h-3.5 w-3.5" />
         </button>
       </div>
 
@@ -50,9 +50,9 @@ export const InventoryStatusCard: React.FC<InventoryStatusCardProps> = ({
             >
               <div className="flex items-center gap-3 min-w-0">
                 <div
-                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl shadow-2xs ${item.colorSwatch}`}
+                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-[#6A0DAD] shadow-2xs ${item.colorSwatch}`}
                 >
-                  {item.emoji}
+                  <HopkidIcon name={item.iconName} className="h-5 w-5" />
                 </div>
                 <div className="min-w-0">
                   <p className="truncate text-[13.5px] font-bold text-[#171322]">

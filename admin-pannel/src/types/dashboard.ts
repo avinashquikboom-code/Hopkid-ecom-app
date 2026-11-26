@@ -1,3 +1,5 @@
+import type { HopkidIconName } from '../components/common/HopkidIcon';
+
 export type DateRangeKey = '7d' | '30d' | '90d' | '1y';
 
 export interface KpiMetric {
@@ -32,7 +34,7 @@ export interface InventoryItem {
   status: StockStatus;
   quantity: number;
   colorSwatch: string;
-  emoji: string;
+  iconName: HopkidIconName;
 }
 
 export type OrderBadgeStatus = 'Delivered' | 'Shipped' | 'Processing' | 'Pending' | 'Cancelled';
@@ -55,7 +57,7 @@ export interface TopProduct {
   sold: number;
   price: string;
   bgTint: string;
-  emoji: string;
+  iconName: HopkidIconName;
 }
 
 export interface TodayStat {

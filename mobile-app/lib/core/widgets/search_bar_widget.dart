@@ -1,5 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 import '../constants/app_colors.dart';
+import '../constants/app_icons.dart';
 
 class SearchBarWidget extends StatelessWidget {
   final TextEditingController? controller;
@@ -28,9 +29,9 @@ class SearchBarWidget extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         prefixIcon: const Icon(
-          Icons.search_rounded,
+          AppIcons.search,
           color: AppColors.primaryPurple,
-          size: 22,
+          size: 20,
         ),
         filled: true,
         fillColor: AppColors.lightPurple.withValues(alpha: 0.55),

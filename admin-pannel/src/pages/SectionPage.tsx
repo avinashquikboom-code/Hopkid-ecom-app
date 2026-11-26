@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Sparkles } from 'lucide-react';
+import { HopkidIcon } from '../components/common/HopkidIcon';
 
 interface SectionPageProps {
   title: string;
@@ -15,7 +15,7 @@ export const SectionPage: React.FC<SectionPageProps> = ({ title, description }) 
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#E8E5EF] bg-white p-6 shadow-sm">
         <div>
           <div className="inline-flex items-center gap-1.5 rounded-full bg-[#F4EAFE] px-3 py-1 text-xs font-bold text-[#6A0DAD]">
-            <Sparkles className="h-3.5 w-3.5" />
+            <HopkidIcon name="sparkles" className="h-3.5 w-3.5" />
             Hopkid Admin Module
           </div>
           <h1 className="mt-2.5 text-2xl font-extrabold text-[#171322]">{title}</h1>
@@ -27,7 +27,7 @@ export const SectionPage: React.FC<SectionPageProps> = ({ title, description }) 
           onClick={() => navigate('/')}
           className="inline-flex items-center gap-2 rounded-xl bg-[#6A0DAD] px-4 py-2.5 text-xs font-bold text-white shadow-sm transition-colors hover:bg-[#4B087E]"
         >
-          <ArrowLeft className="h-4 w-4" />
+          <HopkidIcon name="arrowLeft" className="h-4 w-4" />
           Back to Dashboard
         </button>
       </div>

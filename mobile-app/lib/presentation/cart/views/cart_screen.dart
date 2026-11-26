@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_constants.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/responsive/responsive.dart';
 import '../../../core/widgets/badges_and_price.dart';
 import '../../../core/widgets/buttons.dart';
@@ -30,7 +31,7 @@ class CartScreen extends ConsumerWidget {
       body: SafeArea(
         child: cart.items.isEmpty
             ? EmptyStateWidget(
-                icon: Icons.shopping_bag_outlined,
+                icon: AppIcons.cartLine,
                 title: 'Your Hopkid cart is empty',
                 subtitle: 'Explore cute outfits & toys for your little ones.',
                 actionLabel: 'Start Shopping',
@@ -121,7 +122,7 @@ class _CartItemsList extends StatelessWidget {
                         IconButton(
                           visualDensity: VisualDensity.compact,
                           icon: const Icon(
-                            Icons.delete_outline_rounded,
+                            AppIcons.delete,
                             size: 19,
                             color: AppColors.secondaryText,
                           ),
@@ -192,7 +193,7 @@ class _CartSummaryPanel extends StatelessWidget {
             child: Row(
               children: [
                 const Icon(
-                  Icons.local_offer_outlined,
+                  AppIcons.coupon,
                   color: AppColors.primaryPurple,
                   size: 20,
                 ),
@@ -212,12 +213,12 @@ class _CartSummaryPanel extends StatelessWidget {
                 if (cart.appliedCoupon != null)
                   IconButton(
                     visualDensity: VisualDensity.compact,
-                    icon: const Icon(Icons.close_rounded, size: 18),
+                    icon: const Icon(AppIcons.close, size: 18),
                     onPressed: vm.removeCoupon,
                   )
                 else
                   const Icon(
-                    Icons.chevron_right_rounded,
+                    AppIcons.chevronRight,
                     color: AppColors.primaryPurple,
                   ),
               ],

@@ -1,26 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import {
-  LayoutDashboard,
-  ShoppingBag,
-  Package,
-  FolderTree,
-  Award,
-  Warehouse,
-  Users,
-  Megaphone,
-  TicketPercent,
-  Image as ImageIcon,
-  LayoutTemplate,
-  BarChart3,
-  RotateCcw,
-  ShieldCheck,
-  Settings,
-  ChevronDown,
-  ChevronRight,
-  Crown,
-  X,
-} from 'lucide-react';
+import { HopkidIcon, type HopkidIconName } from '../common/HopkidIcon';
 
 interface NavSubItem {
   label: string;
@@ -30,56 +10,56 @@ interface NavSubItem {
 interface NavItem {
   id: string;
   label: string;
-  icon: React.ComponentType<{ className?: string }>;
+  iconName: HopkidIconName;
   to?: string;
   badge?: string;
   children?: NavSubItem[];
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, to: '/' },
-  { id: 'orders', label: 'Orders', icon: ShoppingBag, to: '/orders', badge: '12' },
+  { id: 'dashboard', label: 'Dashboard', iconName: 'dashboard', to: '/' },
+  { id: 'orders', label: 'Orders', iconName: 'orders', to: '/orders', badge: '12' },
   {
     id: 'products',
     label: 'Products',
-    icon: Package,
+    iconName: 'products',
     children: [
       { label: 'All Products', to: '/products' },
       { label: 'Add Product', to: '/products/new' },
       { label: 'Size & Color Attributes', to: '/products/attributes' },
     ],
   },
-  { id: 'categories', label: 'Categories', icon: FolderTree, to: '/categories' },
-  { id: 'brands', label: 'Brands', icon: Award, to: '/brands' },
-  { id: 'inventory', label: 'Inventory', icon: Warehouse, to: '/inventory' },
-  { id: 'customers', label: 'Customers', icon: Users, to: '/customers' },
+  { id: 'categories', label: 'Categories', iconName: 'categories', to: '/categories' },
+  { id: 'brands', label: 'Brands', iconName: 'brands', to: '/brands' },
+  { id: 'inventory', label: 'Inventory', iconName: 'inventory', to: '/inventory' },
+  { id: 'customers', label: 'Customers', iconName: 'customers', to: '/customers' },
   {
     id: 'marketing',
     label: 'Marketing',
-    icon: Megaphone,
+    iconName: 'marketing',
     children: [
       { label: 'Campaigns', to: '/marketing/campaigns' },
       { label: 'Email & Push', to: '/marketing/notifications' },
     ],
   },
-  { id: 'discounts', label: 'Discounts & Coupons', icon: TicketPercent, to: '/discounts' },
-  { id: 'banners', label: 'Banners & Sliders', icon: ImageIcon, to: '/banners' },
-  { id: 'homepage', label: 'Homepage Manager', icon: LayoutTemplate, to: '/homepage' },
+  { id: 'discounts', label: 'Discounts & Coupons', iconName: 'discounts', to: '/discounts' },
+  { id: 'banners', label: 'Banners & Sliders', iconName: 'banners', to: '/banners' },
+  { id: 'homepage', label: 'Homepage Manager', iconName: 'homepage', to: '/homepage' },
   {
     id: 'reports',
     label: 'Reports & Analytics',
-    icon: BarChart3,
+    iconName: 'reports',
     children: [
       { label: 'Sales Reports', to: '/reports/sales' },
       { label: 'Customer Insights', to: '/reports/customers' },
     ],
   },
-  { id: 'returns', label: 'Returns & Refunds', icon: RotateCcw, to: '/returns' },
-  { id: 'users', label: 'Users & Roles', icon: ShieldCheck, to: '/users' },
+  { id: 'returns', label: 'Returns & Refunds', iconName: 'returns', to: '/returns' },
+  { id: 'users', label: 'Users & Roles', iconName: 'users', to: '/users' },
   {
     id: 'settings',
     label: 'Settings',
-    icon: Settings,
+    iconName: 'settings',
     children: [
       { label: 'Store General', to: '/settings/general' },
       { label: 'Payments & GST', to: '/settings/payments' },
@@ -124,7 +104,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onCloseMobile }) =
           className="flex items-center gap-2.5 group"
         >
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 backdrop-blur-sm ring-1 ring-white/25 shadow-sm transition-transform group-hover:scale-105">
-            <Crown className="h-5 w-5 text-[#FDE047] fill-[#FDE047]/30" />
+            <HopkidIcon name="crown" active className="h-5 w-5 text-[#FDE047]" />
           </div>
           <div className="flex flex-col leading-tight">
             <span className="text-[20px] font-extrabold tracking-tight text-white">
@@ -142,14 +122,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onCloseMobile }) =
           className="rounded-lg p-1.5 text-white/80 hover:bg-white/10 lg:hidden"
           aria-label="Close sidebar"
         >
-          <X className="h-5 w-5" />
+          <HopkidIcon name="close" className="h-5 w-5" />
         </button>
       </div>
 
       {/* Navigation Links */}
       <nav className="sidebar-scroll flex-1 overflow-y-auto px-3 py-1 space-y-0.5">
         {NAV_ITEMS.map((item) => {
-          const Icon = item.icon;
           const hasChildren = Boolean(item.children?.length);
           const groupActive = isGroupActive(item);
           const isOpen = expanded[item.id] || groupActive;
@@ -167,14 +146,17 @@ export const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onCloseMobile }) =
                   }`}
                 >
                   <span className="flex items-center gap-3">
-                    <Icon className="h-[18px] w-[18px] shrink-0 text-white" />
+                    <HopkidIcon
+                      name={item.iconName}
+                      active={groupActive}
+                      className="h-[18px] w-[18px] shrink-0 text-white"
+                    />
                     <span>{item.label}</span>
                   </span>
-                  {isOpen ? (
-                    <ChevronDown className="h-4 w-4 text-white/75" />
-                  ) : (
-                    <ChevronRight className="h-4 w-4 text-white/75" />
-                  )}
+                  <HopkidIcon
+                    name={isOpen ? 'chevronDown' : 'chevronRight'}
+                    className="h-4 w-4 text-white/75"
+                  />
                 </button>
 
                 {isOpen && (
@@ -218,7 +200,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onCloseMobile }) =
               {({ isActive }) => (
                 <>
                   <span className="flex items-center gap-3">
-                    <Icon
+                    <HopkidIcon
+                      name={item.iconName}
+                      active={isActive}
                       className={`h-[18px] w-[18px] shrink-0 ${
                         isActive ? 'text-[#6A0DAD]' : 'text-white'
                       }`}
@@ -246,11 +230,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onCloseMobile }) =
       {/* Bottom Decorative Child & Crown Illustration */}
       <div className="px-4 pt-3 pb-4">
         <div className="relative overflow-hidden rounded-2xl bg-white/10 p-3.5 ring-1 ring-white/15 backdrop-blur-sm">
-          {/* Decorative sparkles */}
           <span className="absolute top-2 right-3 h-2 w-2 rounded-full bg-[#FDE047]/80" />
           <span className="absolute top-6 right-7 h-1.5 w-1.5 rounded-full bg-pink-300/80" />
           <div className="flex items-center gap-3">
-            {/* Playful SVG child with crown */}
             <svg
               viewBox="0 0 64 64"
               className="h-12 w-12 shrink-0"
@@ -259,7 +241,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onCloseMobile }) =
               aria-hidden="true"
             >
               <circle cx="32" cy="36" r="22" fill="#8B35D1" opacity="0.55" />
-              {/* Crown */}
               <path
                 d="M21 20L24 11L32 16L40 11L43 20H21Z"
                 fill="#FDE047"
@@ -267,14 +248,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onCloseMobile }) =
                 strokeWidth="1.5"
                 strokeLinejoin="round"
               />
-              {/* Face */}
               <circle cx="32" cy="34" r="13" fill="#FDE6D8" />
-              {/* Hair */}
               <path
                 d="M19 32C19 24.8 24.8 20 32 20C39.2 20 45 24.8 45 32C42 28 38 26 32 26C26 26 22 28 19 32Z"
                 fill="#4B087E"
               />
-              {/* Eyes & Smile */}
               <circle cx="27.5" cy="34" r="1.6" fill="#171322" />
               <circle cx="36.5" cy="34" r="1.6" fill="#171322" />
               <circle cx="24.5" cy="37" r="2" fill="#FDA4AF" opacity="0.7" />
@@ -285,7 +263,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onCloseMobile }) =
                 strokeWidth="1.6"
                 strokeLinecap="round"
               />
-              {/* Outfit */}
               <path
                 d="M20 55C20 48.5 25.4 45 32 45C38.6 45 44 48.5 44 55"
                 fill="#F472B6"
@@ -307,14 +284,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onCloseMobile }) =
 
   return (
     <>
-      {/* Desktop fixed sidebar */}
       <div className="hidden lg:block lg:w-[250px] lg:shrink-0">
         <div className="fixed inset-y-0 left-0 z-30 w-[250px] shadow-xl">
           {sidebarContent}
         </div>
       </div>
 
-      {/* Mobile/Tablet overlay drawer */}
       {mobileOpen && (
         <div className="fixed inset-0 z-50 flex lg:hidden">
           <div

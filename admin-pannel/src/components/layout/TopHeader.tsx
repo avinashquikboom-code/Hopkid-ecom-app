@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  Menu,
-  Search,
-  Bell,
-  HelpCircle,
-  ChevronDown,
-  LogOut,
-  User,
-  Settings,
-} from 'lucide-react';
+import { HopkidIcon } from '../common/HopkidIcon';
 
 interface TopHeaderProps {
   onOpenMobileSidebar: () => void;
@@ -36,11 +27,14 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
           className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#E8E5EF] bg-[#F8F8FC] text-[#171322] transition-colors hover:bg-[#F4EAFE] hover:text-[#6A0DAD]"
           aria-label="Toggle navigation menu"
         >
-          <Menu className="h-5 w-5" />
+          <HopkidIcon name="menu" className="h-5 w-5" />
         </button>
 
         <div className="relative w-full max-w-[420px]">
-          <Search className="pointer-events-none absolute top-1/2 left-3.5 h-4 w-4 -translate-y-1/2 text-[#6B7280]" />
+          <HopkidIcon
+            name="search"
+            className="pointer-events-none absolute top-1/2 left-3.5 h-4 w-4 -translate-y-1/2 text-[#6B7280]"
+          />
           <input
             type="text"
             value={searchQuery}
@@ -53,7 +47,6 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
 
       {/* Right: Notification, Help, Admin Profile */}
       <div className="flex items-center gap-2 sm:gap-3.5">
-        {/* Notifications */}
         <div className="relative">
           <button
             type="button"
@@ -64,7 +57,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
             className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-[#E8E5EF] bg-white text-[#171322] transition-colors hover:bg-[#F4EAFE] hover:text-[#6A0DAD]"
             aria-label="Notifications"
           >
-            <Bell className="h-[18px] w-[18px]" />
+            <HopkidIcon name="bell" className="h-[18px] w-[18px]" />
             <span className="absolute top-2 right-2.5 h-2 w-2 rounded-full bg-[#EC4899] ring-2 ring-white" />
           </button>
 
@@ -90,7 +83,6 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
           )}
         </div>
 
-        {/* Help */}
         <button
           type="button"
           onClick={() => navigate('/settings/general')}
@@ -98,12 +90,11 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
           aria-label="Help center"
           title="Help & Store Settings"
         >
-          <HelpCircle className="h-[18px] w-[18px]" />
+          <HopkidIcon name="help" className="h-[18px] w-[18px]" />
         </button>
 
         <div className="hidden h-6 w-px bg-[#E8E5EF] sm:block" />
 
-        {/* Admin Profile */}
         <div className="relative">
           <button
             type="button"
@@ -124,7 +115,10 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
                 Super Admin
               </p>
             </div>
-            <ChevronDown className="hidden h-4 w-4 text-[#6B7280] md:block" />
+            <HopkidIcon
+              name="chevronDown"
+              className="hidden h-4 w-4 text-[#6B7280] md:block"
+            />
           </button>
 
           {showProfileMenu && (
@@ -137,7 +131,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
                 }}
                 className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium text-[#171322] hover:bg-[#F4EAFE] hover:text-[#6A0DAD]"
               >
-                <User className="h-4 w-4" />
+                <HopkidIcon name="user" className="h-4 w-4" />
                 Admin Profile
               </button>
               <button
@@ -148,7 +142,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
                 }}
                 className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium text-[#171322] hover:bg-[#F4EAFE] hover:text-[#6A0DAD]"
               >
-                <Settings className="h-4 w-4" />
+                <HopkidIcon name="settings" className="h-4 w-4" />
                 Store Settings
               </button>
               <div className="my-1 h-px bg-[#E8E5EF]" />
@@ -157,7 +151,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
                 onClick={() => setShowProfileMenu(false)}
                 className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium text-rose-600 hover:bg-rose-50"
               >
-                <LogOut className="h-4 w-4" />
+                <HopkidIcon name="logout" className="h-4 w-4" />
                 Sign Out
               </button>
             </div>

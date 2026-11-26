@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_constants.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/widgets/badges_and_price.dart';
 import '../../../core/widgets/hopkid_app_bar.dart';
 import '../../../core/widgets/responsive_container.dart';
@@ -78,7 +79,7 @@ class MyOrdersScreen extends ConsumerWidget {
 
                       if (state.orders.isEmpty)
                         EmptyStateWidget(
-                          icon: Icons.receipt_long_outlined,
+                          icon: AppIcons.ordersLine,
                           title: 'No orders found',
                           subtitle: 'Orders matching this status will appear here.',
                           actionLabel: 'Explore Shop',
@@ -158,7 +159,7 @@ class MyOrdersScreen extends ConsumerWidget {
                                     ),
                                     const SizedBox(width: 6),
                                     const Icon(
-                                      Icons.chevron_right_rounded,
+                                      AppIcons.chevronRight,
                                       color: AppColors.secondaryText,
                                     ),
                                   ],

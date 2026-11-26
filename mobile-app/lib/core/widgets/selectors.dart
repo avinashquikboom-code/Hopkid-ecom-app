@@ -1,5 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 import '../constants/app_colors.dart';
+import '../constants/app_icons.dart';
 
 class QuantitySelector extends StatelessWidget {
   final int quantity;
@@ -34,7 +35,7 @@ class QuantitySelector extends StatelessWidget {
               width: size,
               height: size,
               child: const Icon(
-                Icons.remove_rounded,
+                AppIcons.subtract,
                 size: 16,
                 color: AppColors.primaryPurple,
               ),
@@ -58,7 +59,7 @@ class QuantitySelector extends StatelessWidget {
               width: size,
               height: size,
               child: const Icon(
-                Icons.add_rounded,
+                AppIcons.add,
                 size: 16,
                 color: AppColors.primaryPurple,
               ),

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/widgets/hopkid_app_bar.dart';
 import '../../../core/widgets/responsive_container.dart';
 import '../../../core/widgets/state_widgets.dart';
@@ -117,7 +118,7 @@ class OffersScreen extends ConsumerWidget {
                                   borderRadius: BorderRadius.circular(14),
                                 ),
                                 child: const Icon(
-                                  Icons.confirmation_number_outlined,
+                                  AppIcons.coupon,
                                   color: AppColors.primaryPurple,
                                 ),
                               ),
@@ -163,7 +164,7 @@ class OffersScreen extends ConsumerWidget {
                                             );
                                           },
                                           child: const Icon(
-                                            Icons.copy_rounded,
+                                            AppIcons.copy,
                                             size: 15,
                                             color: AppColors.secondaryText,
                                           ),

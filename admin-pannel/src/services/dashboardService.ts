@@ -156,7 +156,7 @@ export function getDemoDashboardData(range: DateRangeKey = '30d'): DashboardData
         status: 'In Stock',
         quantity: 124,
         colorSwatch: 'bg-[#E7F8EA]',
-        emoji: '🦖',
+        iconName: 'tshirt',
       },
       {
         id: 'inv-2',
@@ -165,7 +165,7 @@ export function getDemoDashboardData(range: DateRangeKey = '30d'): DashboardData
         status: 'Low Stock',
         quantity: 18,
         colorSwatch: 'bg-[#FCE7F3]',
-        emoji: '👗',
+        iconName: 'dress',
       },
       {
         id: 'inv-3',
@@ -174,7 +174,7 @@ export function getDemoDashboardData(range: DateRangeKey = '30d'): DashboardData
         status: 'Out of Stock',
         quantity: 0,
         colorSwatch: 'bg-[#FFF3DF]',
-        emoji: '🧸',
+        iconName: 'baby',
       },
     ],
     recentOrders: [
@@ -224,7 +224,7 @@ export function getDemoDashboardData(range: DateRangeKey = '30d'): DashboardData
         sold: 652,
         price: '₹799',
         bgTint: 'bg-[#F0E5FC]',
-        emoji: '🧥',
+        iconName: 'tshirt',
       },
       {
         id: 'tp-2',
@@ -234,7 +234,7 @@ export function getDemoDashboardData(range: DateRangeKey = '30d'): DashboardData
         sold: 489,
         price: '₹899',
         bgTint: 'bg-[#FCE7F3]',
-        emoji: '👗',
+        iconName: 'dress',
       },
       {
         id: 'tp-3',
@@ -244,7 +244,7 @@ export function getDemoDashboardData(range: DateRangeKey = '30d'): DashboardData
         sold: 418,
         price: '₹639',
         bgTint: 'bg-[#FFF3DF]',
-        emoji: '👶',
+        iconName: 'baby',
       },
     ],
     todayStats: [

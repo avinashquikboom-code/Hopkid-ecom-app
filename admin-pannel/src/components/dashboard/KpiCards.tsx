@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-  ShoppingCart,
-  ShoppingBag,
-  Users,
-  Package,
-  TrendingUp,
-} from 'lucide-react';
 import { ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { HopkidIcon, type HopkidIconName } from '../common/HopkidIcon';
 import type { KpiMetric } from '../../types/dashboard';
 
 interface KpiCardsProps {
@@ -22,7 +16,7 @@ const CARD_STYLES: Record<
     iconColor: string;
     stroke: string;
     fill: string;
-    Icon: React.ComponentType<{ className?: string }>;
+    iconName: HopkidIconName;
   }
 > = {
   sales: {
@@ -31,7 +25,7 @@ const CARD_STYLES: Record<
     iconColor: 'text-[#6A0DAD]',
     stroke: '#6A0DAD',
     fill: '#8B35D1',
-    Icon: ShoppingCart,
+    iconName: 'cart',
   },
   orders: {
     bg: 'bg-[#FCE7F3]',
@@ -39,7 +33,7 @@ const CARD_STYLES: Record<
     iconColor: 'text-[#DB2777]',
     stroke: '#DB2777',
     fill: '#F472B6',
-    Icon: ShoppingBag,
+    iconName: 'bag',
   },
   customers: {
     bg: 'bg-[#F0E5FC]',
@@ -47,7 +41,7 @@ const CARD_STYLES: Record<
     iconColor: 'text-[#7C3AED]',
     stroke: '#7C3AED',
     fill: '#A78BFA',
-    Icon: Users,
+    iconName: 'customers',
   },
   products: {
     bg: 'bg-[#E7F8EA]',
@@ -55,7 +49,7 @@ const CARD_STYLES: Record<
     iconColor: 'text-[#16A34A]',
     stroke: '#16A34A',
     fill: '#4ADE80',
-    Icon: Package,
+    iconName: 'package',
   },
 };
 
@@ -77,7 +71,6 @@ export const KpiCards: React.FC<KpiCardsProps> = ({ kpis, loading }) => {
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
       {kpis.map((kpi) => {
         const style = CARD_STYLES[kpi.id];
-        const Icon = style.Icon;
         const gradId = `spark-${kpi.id}`;
 
         return (
@@ -95,14 +88,17 @@ export const KpiCards: React.FC<KpiCardsProps> = ({ kpis, loading }) => {
               <div
                 className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full shadow-xs ${style.iconBg}`}
               >
-                <Icon className={`h-5 w-5 ${style.iconColor}`} />
+                <HopkidIcon
+                  name={style.iconName}
+                  className={`h-5 w-5 ${style.iconColor}`}
+                />
               </div>
             </div>
 
             <div className="mt-3 flex items-end justify-between gap-2">
               <div className="flex items-center gap-1.5">
                 <span className="inline-flex items-center gap-0.5 rounded-full bg-white/80 px-2 py-0.5 text-[11.5px] font-bold text-[#16A34A] shadow-2xs">
-                  <TrendingUp className="h-3 w-3" />
+                  <HopkidIcon name="trendingUp" className="h-3 w-3" />
                   {kpi.growth}
                 </span>
                 <span className="text-[11.5px] font-medium text-[#6B7280]">

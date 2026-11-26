@@ -2,6 +2,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/widgets/hopkid_app_bar.dart';
 import '../../../core/widgets/responsive_container.dart';
 import '../../../core/widgets/state_widgets.dart';
@@ -103,32 +104,32 @@ class ProfileScreen extends ConsumerWidget {
 
                     // Menu Items
                     _AccountMenuTile(
-                      icon: Icons.shopping_bag_outlined,
+                      icon: AppIcons.ordersLine,
                       title: 'My Orders',
                       onTap: () => context.go('/orders'),
                     ),
                     _AccountMenuTile(
-                      icon: Icons.favorite_border_rounded,
+                      icon: AppIcons.heartLine,
                       title: 'My Wishlist',
                       onTap: () => context.push('/wishlist'),
                     ),
                     _AccountMenuTile(
-                      icon: Icons.location_on_outlined,
+                      icon: AppIcons.location,
                       title: 'Addresses',
                       onTap: () => context.push('/checkout'),
                     ),
                     _AccountMenuTile(
-                      icon: Icons.credit_card_outlined,
+                      icon: AppIcons.card,
                       title: 'Payment Methods',
                       onTap: () => context.push('/checkout'),
                     ),
                     _AccountMenuTile(
-                      icon: Icons.local_offer_outlined,
+                      icon: AppIcons.coupon,
                       title: 'Coupons & Offers',
                       onTap: () => context.push('/offers'),
                     ),
                     _AccountMenuTile(
-                      icon: Icons.notifications_none_rounded,
+                      icon: AppIcons.notification,
                       title: 'Notifications',
                       onTap: () => ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
@@ -137,7 +138,7 @@ class ProfileScreen extends ConsumerWidget {
                       ),
                     ),
                     _AccountMenuTile(
-                      icon: Icons.support_agent_rounded,
+                      icon: AppIcons.support,
                       title: 'Help & Support',
                       onTap: () => ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
@@ -146,7 +147,7 @@ class ProfileScreen extends ConsumerWidget {
                       ),
                     ),
                     _AccountMenuTile(
-                      icon: Icons.info_outline_rounded,
+                      icon: AppIcons.info,
                       title: 'About Hopkid',
                       onTap: () => ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
@@ -155,7 +156,7 @@ class ProfileScreen extends ConsumerWidget {
                       ),
                     ),
                     _AccountMenuTile(
-                      icon: Icons.logout_rounded,
+                      icon: AppIcons.logout,
                       title: 'Logout',
                       isDestructive: true,
                       onTap: () async {
@@ -231,7 +232,7 @@ class _AccountMenuTile extends StatelessWidget {
                   ),
                 ),
                 const Icon(
-                  Icons.chevron_right_rounded,
+                  AppIcons.chevronRight,
                   color: AppColors.secondaryText,
                 ),
               ],

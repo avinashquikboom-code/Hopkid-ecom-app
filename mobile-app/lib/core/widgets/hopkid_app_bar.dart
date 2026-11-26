@@ -1,5 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 import '../constants/app_colors.dart';
+import '../constants/app_icons.dart';
 
 class HopkidAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -27,7 +28,7 @@ class HopkidAppBar extends StatelessWidget implements PreferredSizeWidget {
       surfaceTintColor: Colors.transparent,
       leading: showBack
           ? IconButton(
-              icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20),
+              icon: const Icon(AppIcons.back, size: 22),
               color: AppColors.primaryText,
               onPressed: onBack ?? () => Navigator.of(context).maybePop(),
             )

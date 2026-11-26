@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_constants.dart';
+import '../../../core/constants/app_icons.dart';
 import '../../../core/services/providers.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
@@ -88,7 +89,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                           ],
                         ),
                         child: const Icon(
-                          Icons.workspace_premium_rounded,
+                          AppIcons.crownFill,
                           size: 38,
                           color: AppColors.primaryPurple,
                         ),

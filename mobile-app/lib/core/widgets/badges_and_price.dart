@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:material_ui/material_ui.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_constants.dart';
+import '../constants/app_icons.dart';
 
 class PriceWidget extends StatelessWidget {
   final double price;
@@ -87,7 +88,7 @@ class RatingWidget extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const Icon(Icons.star_rounded, color: AppColors.warning, size: 15),
+        const Icon(AppIcons.starFill, color: AppColors.warning, size: 14),
         const SizedBox(width: 3),
         Text(
           rating.toStringAsFixed(1),
@@ -164,7 +165,7 @@ class HopkidImage extends StatelessWidget {
       height: height,
       color: AppColors.lightPurple,
       child: const Icon(
-        Icons.checkroom_rounded,
+        AppIcons.tshirt,
         color: AppColors.primaryPurple,
         size: 32,
       ),
