@@ -125,7 +125,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
                   // Promotional Banner Slider
                   SizedBox(
-                    height: Responsive.isTablet(context) ? 210 : 172,
+                    height: Responsive.isTablet(context) ? 220 : 188,
                     child: PageView.builder(
                       controller: _bannerController,
                       itemCount: 3,
@@ -133,7 +133,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       itemBuilder: (context, idx) {
                         return Container(
                           margin: const EdgeInsets.only(right: 4),
-                          padding: const EdgeInsets.all(18),
+                          padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
                             gradient: const LinearGradient(
                               colors: [AppColors.lightPurple, AppColors.pink],
@@ -150,11 +150,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Container(
                                       padding: const EdgeInsets.symmetric(
                                         horizontal: 10,
-                                        vertical: 4,
+                                        vertical: 3,
                                       ),
                                       decoration: BoxDecoration(
                                         color: Colors.white,
@@ -169,23 +170,29 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(height: 8),
+                                    const SizedBox(height: 6),
                                     const Text(
                                       'New Kids Collection',
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
-                                        fontSize: 19,
+                                        fontSize: 18,
+                                        height: 1.2,
                                         fontWeight: FontWeight.w800,
                                         color: AppColors.primaryText,
                                       ),
                                     ),
-                                    const SizedBox(height: 10),
+                                    const SizedBox(height: 8),
                                     ElevatedButton(
                                       onPressed: () =>
                                           context.push('/products?category=boys'),
                                       style: ElevatedButton.styleFrom(
-                                        minimumSize: const Size(116, 36),
+                                        minimumSize: const Size(112, 34),
+                                        tapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap,
                                         padding: const EdgeInsets.symmetric(
-                                          horizontal: 16,
+                                          horizontal: 14,
+                                          vertical: 6,
                                         ),
                                       ),
                                       child: const Text(
