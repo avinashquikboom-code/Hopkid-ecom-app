@@ -397,7 +397,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               child: ListView.separated(
                                 scrollDirection: Axis.horizontal,
                                 itemCount: homeData.trendingProducts.length,
-                                separatorBuilder: (_, __) =>
+                                separatorBuilder: (_, _) =>
                                     const SizedBox(width: 12),
                                 itemBuilder: (context, idx) {
                                   final product = homeData.trendingProducts[idx];

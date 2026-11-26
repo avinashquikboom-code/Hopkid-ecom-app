@@ -25,15 +25,15 @@ final GoRouter appRouter = GoRouter(
   routes: [
     GoRoute(
       path: '/splash',
-      builder: (_, __) => const SplashScreen(),
+      builder: (_, _) => const SplashScreen(),
     ),
     GoRoute(
       path: '/onboarding',
-      builder: (_, __) => const OnboardingScreen(),
+      builder: (_, _) => const OnboardingScreen(),
     ),
     GoRoute(
       path: '/auth',
-      builder: (_, __) => const AuthScreen(),
+      builder: (_, _) => const AuthScreen(),
     ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
@@ -44,7 +44,7 @@ final GoRouter appRouter = GoRouter(
           routes: [
             GoRoute(
               path: '/home',
-              builder: (_, __) => const HomeScreen(),
+              builder: (_, _) => const HomeScreen(),
             ),
           ],
         ),
@@ -52,7 +52,7 @@ final GoRouter appRouter = GoRouter(
           routes: [
             GoRoute(
               path: '/categories',
-              builder: (_, __) => const CategoriesScreen(),
+              builder: (_, _) => const CategoriesScreen(),
             ),
           ],
         ),
@@ -60,7 +60,7 @@ final GoRouter appRouter = GoRouter(
           routes: [
             GoRoute(
               path: '/cart',
-              builder: (_, __) => const CartScreen(),
+              builder: (_, _) => const CartScreen(),
             ),
           ],
         ),
@@ -68,7 +68,7 @@ final GoRouter appRouter = GoRouter(
           routes: [
             GoRoute(
               path: '/orders',
-              builder: (_, __) => const MyOrdersScreen(),
+              builder: (_, _) => const MyOrdersScreen(),
             ),
           ],
         ),
@@ -76,7 +76,7 @@ final GoRouter appRouter = GoRouter(
           routes: [
             GoRoute(
               path: '/profile',
-              builder: (_, __) => const ProfileScreen(),
+              builder: (_, _) => const ProfileScreen(),
             ),
           ],
         ),
@@ -98,7 +98,7 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: '/checkout',
-      builder: (_, __) => const CheckoutScreen(),
+      builder: (_, _) => const CheckoutScreen(),
     ),
     GoRoute(
       path: '/order-success/:orderId',
@@ -120,11 +120,11 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: '/wishlist',
-      builder: (_, __) => const WishlistScreen(),
+      builder: (_, _) => const WishlistScreen(),
     ),
     GoRoute(
       path: '/offers',
-      builder: (_, __) => const OffersScreen(),
+      builder: (_, _) => const OffersScreen(),
     ),
   ],
 );

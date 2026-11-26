@@ -300,7 +300,7 @@ class _SectionCard extends StatelessWidget {
                   color: AppColors.primaryText,
                 ),
               ),
-              if (trailing != null) trailing!,
+              ?trailing,
             ],
           ),
           const SizedBox(height: 10),

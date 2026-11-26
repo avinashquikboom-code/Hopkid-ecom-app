@@ -166,7 +166,7 @@ class _ProductListingScreenState extends ConsumerState<ProductListingScreen> {
                       child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemCount: _chips.length,
-                        separatorBuilder: (_, __) => const SizedBox(width: 8),
+                        separatorBuilder: (_, _) => const SizedBox(width: 8),
                         itemBuilder: (context, idx) {
                           final chip = _chips[idx];
                           final selected = state.selectedSubCategory == chip;

@@ -23,8 +23,8 @@ class AppTheme {
         backgroundColor: AppColors.surface,
         foregroundColor: AppColors.primaryText,
         elevation: 0,
-        scrolledUnderElevation: 0.5,
-        centerTitle: false,
+        scrolledUnderElevation: 0,
+        centerTitle: true,
         titleTextStyle: AppTypography.title,
       ),
       cardTheme: CardThemeData(
